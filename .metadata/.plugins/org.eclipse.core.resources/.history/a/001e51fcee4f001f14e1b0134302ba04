@@ -1,0 +1,13 @@
+package com.aurionpro.structure.adapter.model;
+
+public class HatAdapter implements IItems{
+	private Hat hat;
+
+	public HatAdapter(Hat hat) {
+		super();
+		this.hat = hat;
+	}
+	
+	
+
+}

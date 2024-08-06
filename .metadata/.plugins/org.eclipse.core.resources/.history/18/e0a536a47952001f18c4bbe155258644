@@ -1,0 +1,11 @@
+package com.aurionpro.exceptions;
+
+import com.aurionpro.model.MarkType;
+
+public class CellAlreadyMarkedException  extends RuntimeException{
+	
+	public String getMessage(MarkType markType) {
+		return "Cell is already with " + markType;
+	}
+
+}

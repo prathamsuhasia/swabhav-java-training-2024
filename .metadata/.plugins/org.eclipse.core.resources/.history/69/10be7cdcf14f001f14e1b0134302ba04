@@ -1,0 +1,24 @@
+package com.aurionpro.structural.facade.model;
+
+public class Projector {
+	private boolean onOff;
+	private String source;
+	
+	public boolean on() {
+		onOff = true;
+		return onOff;
+		
+	}
+	public boolean off() {
+		onOff = false;
+		return onOff;
+		
+	}
+	public String setSource(String source) {
+		this.source =source;
+		return this.source;
+		
+		
+	}
+
+}

@@ -1,0 +1,29 @@
+package com.aurionpro.creational.builder.model;
+
+public class PhoneBuilder {
+	private String operatingSystem;
+	private int ram;
+	private String Processor;
+	private double ScreenSize;
+	private int battery;
+	public PhoneBuilder setOperatingSystem(String operatingSystem) {
+		this.operatingSystem = operatingSystem;
+	}
+	public PhoneBuilder setRam(int ram) {
+		this.ram = ram;
+	}
+	public PhoneBuilder setProcessor(String processor) {
+		Processor = processor;
+	}
+	public PhoneBuilder setScreenSize(double screenSize) {
+		ScreenSize = screenSize;
+	}
+	public PhoneBuilder setBattery(int battery) {
+		this.battery = battery;
+	}
+	
+	public Phone getPhone() {
+		return new pho
+	}
+
+}

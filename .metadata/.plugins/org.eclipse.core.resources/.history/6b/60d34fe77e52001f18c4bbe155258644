@@ -1,0 +1,88 @@
+package com.aurionpro.model;
+
+import com.aurionpro.exceptions.CellAlreadyMarkedException;
+
+public class Board {
+    private Cell[][] matrix;
+    private final int size;
+
+    public Board(int size) {
+        this.size = size;
+        matrix = new Cell[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = new Cell();
+            }
+        }
+    }
+
+    public Cell getCell(int row, int col) {
+        return matrix[row][col];
+    }
+
+    public void setCellMark(int row, int col, MarkType mark) throws CellAlreadyMarkedException {
+        matrix[row][col].setMark(mark);
+    }
+
+    public void display() {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(matrix[i][j].getMark() + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean checkWin(MarkType mark) {
+        // Check rows
+        for (int i = 0; i < size; i++) {
+            if (checkRow(i, mark)) {
+                return true;
+            }
+        }
+
+        // Check columns
+        for (int i = 0; i < size; i++) {
+            if (checkColumn(i, mark)) {
+                return true;
+            }
+        }
+
+        // Check diagonals
+        return checkDiagonals(mark);
+    }
+
+    private boolean checkRow(int row, MarkType mark) {
+        for (int col = 0; col < size; col++) {
+            if (matrix[row][col].getMark() != mark) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean checkColumn(int col, MarkType mark) {
+        for (int row = 0; row < size; row++) {
+            if (matrix[row][col].getMark() != mark) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean checkDiagonals(MarkType mark) {
+        boolean leftDiagonal = true, rightDiagonal = true;
+
+        for (int i = 0; i < size; i++) {
+            if (matrix[i][i].getMark() != mark) {
+                leftDiagonal = false;
+            }
+            if (matrix[i][size - 1 - i].getMark() != mark) {
+                rightDiagonal = false;
+            }
+        }
+
+        return leftDiagonal || rightDiagonal;
+    }
+}
+

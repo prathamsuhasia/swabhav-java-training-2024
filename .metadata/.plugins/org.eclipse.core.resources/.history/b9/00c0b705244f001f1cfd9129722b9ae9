@@ -1,0 +1,22 @@
+package com.aurionpro.creational.factory.model;
+
+public class SavingsAccount extends Account implements IAccount {
+
+	public SavingsAccount(int accountNumber, String name, double balance) {
+		super(accountNumber, name, balance);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public double credit() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double debit() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

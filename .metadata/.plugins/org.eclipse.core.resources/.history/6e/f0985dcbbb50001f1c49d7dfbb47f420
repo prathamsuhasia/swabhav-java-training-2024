@@ -1,0 +1,5 @@
+package com.aurionpro.behavourial.state.model;
+
+public interface IPacket {
+
+}

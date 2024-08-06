@@ -1,0 +1,38 @@
+package com.aurionpro.isp.solution.model;
+
+import com.aurionpro.isp.violation.model.IWorker;
+
+public class Labour implements IWorker,Ilabour {
+
+	@Override
+	public void drink() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eat() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void rest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void startwork() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stopwork() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}

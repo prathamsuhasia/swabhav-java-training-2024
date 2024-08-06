@@ -1,0 +1,5 @@
+package com.aurionpro.structure.adapter.model;
+
+public class Biscuit {
+
+}

@@ -1,0 +1,9 @@
+package com.aurionpro.structural.facade.model;
+
+public interface IDVDPlayer {
+	public boolean on();
+	public boolean off();
+	public boolean start();
+	public boolean stop();
+
+}

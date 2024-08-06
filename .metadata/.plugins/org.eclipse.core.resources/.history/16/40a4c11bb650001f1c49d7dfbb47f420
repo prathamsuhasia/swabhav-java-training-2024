@@ -1,0 +1,13 @@
+package com.aurionpro.behavourial.observer.model;
+
+public class WhatsAppNotifier implements INotifier{
+
+	@Override
+	public String notification(Account account) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+}

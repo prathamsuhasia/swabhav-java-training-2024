@@ -1,0 +1,15 @@
+package com.aurionpro.structure.adapter.test;
+
+import com.aurionpro.structure.adapter.model.Biscuit;
+import com.aurionpro.structure.adapter.model.HatAdapter;
+import com.aurionpro.structure.adapter.model.IItems;
+
+public class ShoppingCartTest {
+	public static void main(String[] args) {
+		IItems biscuit = new Biscuit();
+		Hat hat= new Hat();
+		IItems hat1 = new HatAdapter(hat);
+		
+		
+	}
+}

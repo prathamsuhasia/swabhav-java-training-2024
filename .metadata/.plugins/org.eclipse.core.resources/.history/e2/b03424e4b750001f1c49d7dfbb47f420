@@ -1,0 +1,97 @@
+package com.aurionpro.behavourial.observer.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aurionpro.behavourial.observer.exceptions.InsufficientFundsException;
+import com.aurionpro.behavourial.observer.exceptions.InvalidDepsoitAmountException;
+
+public class Account {
+
+	private int accountNumber;
+	private String Name;
+	private double balance;
+	private List<INotifier> notifiers;
+	private Account account;
+
+	public Account(int accountNumber, String name, double balance) {
+		super();
+		this.accountNumber = accountNumber;
+		Name = name;
+		this.balance = balance;
+		this.notifiers = new ArrayList<INotifier>();
+
+	}
+
+	public int getAccountNumber() {
+		return accountNumber;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public List<INotifier> getNotifiers() {
+		return notifiers;
+	}
+
+	public void setAccountNumber(int accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public void setNotifiers(List<INotifier> notifiers) {
+		this.notifiers = notifiers;
+	}
+
+	public void registerNotifier(INotifier notifiers) {
+		this.notifiers.add(notifiers);
+	}
+
+	public double deposit(double creditAmount) {
+
+		if (creditAmount <= 0) {
+			throw new InvalidDepsoitAmountException();
+		}
+
+		this.setBalance(this.getBalance() + creditAmount);
+		notifyNotifiers(notifiers);
+		return this.getBalance();
+
+	}
+
+	public double debit(double debitAmount) {
+		if (debitAmount <= 0) {
+			throw new InvalidDepsoitAmountException();
+		}
+
+		if (debitAmount > this.getBalance()) {
+			throw new InsufficientFundsException();
+		}
+
+		this.setBalance(this.getBalance() - debitAmount);
+		notifyNotifiers(notifiers);
+		return this.getBalance();
+		
+	}
+	
+	public void notifyNotifiers(List<INotifier> notifiers) {
+		for (INotifier notifier: notifiers) {
+			notifier.notification(this);
+		}
+		
+		
+	}
+
+}

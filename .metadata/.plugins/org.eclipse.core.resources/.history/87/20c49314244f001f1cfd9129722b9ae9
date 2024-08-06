@@ -1,0 +1,20 @@
+package com.aurionpro.creational.factory.model;
+
+public class CurrentAccount extends Account implements IAccount {
+	
+	@Override
+	public double credit() {
+		// TODO Auto-generated method stub
+		
+		
+		
+		return 0;
+	}
+
+	@Override
+	public double debit() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

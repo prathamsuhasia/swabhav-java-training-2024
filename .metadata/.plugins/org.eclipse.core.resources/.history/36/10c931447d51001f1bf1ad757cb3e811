@@ -1,0 +1,10 @@
+package com.aurionpro.model;
+
+public class Operations {
+
+	public int addittion(int number1, int number2) {
+		Operations operations = mew Operations();
+		return number1 + number2;
+	}
+
+}

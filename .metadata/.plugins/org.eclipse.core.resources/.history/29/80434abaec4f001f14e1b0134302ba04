@@ -1,0 +1,9 @@
+package com.aurionpro.structural.facade.model;
+
+public interface IProjector {
+	public boolean on();
+	public boolean off();
+	public void setInput();
+	
+
+}

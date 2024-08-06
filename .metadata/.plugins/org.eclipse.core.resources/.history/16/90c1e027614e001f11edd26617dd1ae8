@@ -1,0 +1,12 @@
+package com.aurionpro.dip.solution.test;
+
+import com.aurionpro.dip.solution.model.ILogger;
+import com.aurionpro.dip.violation.model.TaxCalculator;
+
+public class TaxCalculatorTest {
+	public static void main(String[] args) {
+		ILogger ilogger;
+		TaxCalculator taxCalculator = new TaxCalculator(ilogger);
+		taxCalculator.calculateInterest();
+	}
+}

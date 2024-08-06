@@ -1,0 +1,8 @@
+package com.aurionpro.structure.adapter.model;
+
+public class Biscuit implements IItems{
+
+	private String name;
+	private double price;
+	
+}

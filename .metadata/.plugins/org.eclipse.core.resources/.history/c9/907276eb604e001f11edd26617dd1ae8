@@ -1,0 +1,28 @@
+package com.aurionpro.dip.solution.model;
+
+import com.aurionpro.dip.violation.model.DBLogger;
+
+public class TaxCalculator {
+	
+	private ILogger iLogger;
+
+	public TaxCalculator(ILogger iLogger) {
+		super();
+		this.iLogger = iLogger;
+	}
+	
+	public int calculateInterest() {
+		iLogger = new DBLogger(10000, 0);
+		int tax=0;
+		try {
+			tax = dblogger.getAmount()/dblogger.getRateOfInterest();
+		}
+		catch(Exception exception) {
+			new DBLogger().log("Divide by Zero");
+		}
+		
+		return tax;
+		
+	}
+
+}

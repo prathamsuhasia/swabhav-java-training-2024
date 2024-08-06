@@ -1,0 +1,39 @@
+package com.aurionpro.creational.abstractfactory.model;
+
+public class CurrentAccount extends Account implements IAccount {
+
+    private static final double OVERDRAFT_LIMIT = 50000.0;
+
+    public CurrentAccount(int accountNumber, String name, double balance) {
+        super(accountNumber, name, balance);
+    }
+
+    @Override
+    public double credit(double creditAmount) {
+        if (creditAmount <= 0) {
+            System.out.println("Cannot deposit that amount");
+            return this.getBalance();
+        }
+
+        this.setBalance(this.getBalance() + creditAmount);
+        return this.getBalance();
+    }
+
+    @Override
+    public double debit(double debitAmount) {
+        if (debitAmount <= 0) {
+            System.out.println("Cannot withdraw that amount");
+            return this.getBalance();
+        }
+
+        if (this.getBalance() - debitAmount < -OVERDRAFT_LIMIT) {
+            System.out.println("Cannot withdraw. Balance would drop below the overdraft limit of " + OVERDRAFT_LIMIT);
+            System.out.println("Remaining overdraft amount: " + (OVERDRAFT_LIMIT + this.getBalance()));
+            return this.getBalance();
+        }
+
+        this.setBalance(this.getBalance() - debitAmount);
+        System.out.println("Remaining overdraft amount: " + (OVERDRAFT_LIMIT + this.getBalance()));
+        return this.getBalance();
+    }
+}

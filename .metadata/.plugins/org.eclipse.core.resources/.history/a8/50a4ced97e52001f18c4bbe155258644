@@ -1,0 +1,19 @@
+package com.aurionpro.test;
+
+import java.util.Scanner;
+
+import com.aurionpro.model.TicTacToe;
+
+public class TicTacToeTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        TicTacToe game = new TicTacToe(3);
+
+        while (true) {
+            System.out.println("Enter row and column (0-2): ");
+            int row = scanner.nextInt();
+            int col = scanner.nextInt();
+            game.makeMove(row, col);
+        }
+    }
+}

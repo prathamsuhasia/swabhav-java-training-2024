@@ -1,0 +1,9 @@
+
+package com.aurionpro.structure.adapter.model;
+
+import java.util.List;
+
+public class ShoppingCart {
+	List<IItems>  cartItems ;
+
+}

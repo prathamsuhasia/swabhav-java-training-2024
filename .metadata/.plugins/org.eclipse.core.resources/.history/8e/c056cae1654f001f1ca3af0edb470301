@@ -1,0 +1,27 @@
+package com.aurionpro.creational.abstractfactory.test;
+
+import com.aurionpro.creational.abstractfactory.model.CurrentAccountFactory;
+import com.aurionpro.creational.abstractfactory.model.IAccount;
+import com.aurionpro.creational.abstractfactory.model.IAccountFactory;
+
+public class AccountTest {
+
+	public static void main(String[] args) {
+		IAccountFactory accountFactory = new CurrentAccountFactory();
+		IAccount account = accountFactory.createAccount(10000, "Pratham", 200000);
+		
+		System.out.println("Balance after credit " +account.credit(1000));
+		
+		
+		System.out.println("Balance after debit  " +account.debit(1000));
+		
+		System.out.println("Balance after debit  " +account.debit(200000));
+		
+		
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.aurionpro.behavourial.observer.model;
+
+public interface INotifier {
+ public  void SMSNotifier();
+}

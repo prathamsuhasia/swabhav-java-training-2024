@@ -1,0 +1,22 @@
+package com.aurionpro.isp.solution.test;
+
+
+
+
+import com.aurionpro.isp.solution.model.IWorker;
+import com.aurionpro.isp.solution.model.Labour;
+import com.aurionpro.isp.solution.model.Robot;
+
+public class WorkerTest {
+	public static void main(String[] args) {
+		IWorker labour = new Labour();
+		
+		labour.startWork();
+		
+		
+		IWorker robot =  new Robot();
+		
+		robot.startWork();
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.aurionpro.behavourial.observer.exceptions;
+
+public class InsufficientFundsException {
+
+}

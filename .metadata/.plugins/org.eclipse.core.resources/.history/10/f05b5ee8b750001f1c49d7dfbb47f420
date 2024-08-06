@@ -1,0 +1,31 @@
+package com.aurionpro.behavourial.observer.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.aurionpro.behavourial.observer.model.Account;
+import com.aurionpro.behavourial.observer.model.EmailNotifier;
+import com.aurionpro.behavourial.observer.model.INotifier;
+import com.aurionpro.behavourial.observer.model.SMSNotifier;
+import com.aurionpro.behavourial.observer.model.WhatsAppNotifier;
+
+public class AccountTest {
+	public static void main(String[] args) {
+		
+		List<INotifier> notifiers =  new ArrayList<INotifier>();
+		
+		
+		
+		Account account = new Account(1, "Pratham", 10000); 
+		
+
+		account.registerNotifier(new SMSNotifier());
+		account.registerNotifier(new EmailNotifier());
+		account.registerNotifier(new WhatsAppNotifier());
+		
+		account.deposit(100);
+		
+		
+	}
+
+}

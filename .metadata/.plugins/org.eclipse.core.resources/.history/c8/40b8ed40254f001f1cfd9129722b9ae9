@@ -1,0 +1,30 @@
+package com.aurionpro.creational.factory.model;
+
+public class CurrentAccount extends Account implements IAccount {
+	
+	
+
+	public CurrentAccount(int accountNumber, String name, double balance) {
+		super(accountNumber, name, balance);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public double credit(double creditAmount) {
+		
+		if(creditAmount<=0) {
+			System.out.println("Cannot deposit that amount");
+		}
+		
+		
+		this.setBalance(this.getAccountNumber()+creditAmount);
+		return 0;
+	}
+
+	@Override
+	public double debit(double depositAmount) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

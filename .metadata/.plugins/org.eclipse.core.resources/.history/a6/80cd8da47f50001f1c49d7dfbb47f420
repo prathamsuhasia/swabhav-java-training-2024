@@ -1,0 +1,24 @@
+package com.aurionpro.structural.decorator.model;
+
+public class RibbonedHat extends HatDecorator {
+    public RibbonedHat(IHat hat) {
+        super(hat);
+    }
+
+    @Override
+    public String getName() {
+        return hat.getName() + ", Ribboned";
+    }
+
+    @Override
+    public double getPrice() {
+        // Adding $5 for the ribbon feature
+        return hat.getPrice() + 100;
+    }
+
+    @Override
+    public String getDescription() {
+        return hat.getDescription() + " with a beautiful ribbon.";
+    }
+}
+

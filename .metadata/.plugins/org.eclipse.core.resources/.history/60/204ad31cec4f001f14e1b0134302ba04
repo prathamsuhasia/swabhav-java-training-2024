@@ -1,0 +1,30 @@
+package com.aurionpro.structural.facade.model;
+
+public class MovieFacade {
+	private DVDPlayer dvdplayer =  new DVDPlayer();
+	private Projector projector  =  new Projector();
+	private SoundSystem soundSystem = new SoundSystem();
+	
+	
+	public void startMovie() {
+		
+		dvdplayer.on();
+		projector.on();
+		projector.setSource("USB");
+		soundSystem.start();
+		System.out.println("Movie started");
+		
+	}
+	
+	public void stopMovie() {
+		
+		dvdplayer.off();
+		projector.off();
+		projector.setSource("Ejected");
+		soundSystem.stop();
+		System.out.println("Movie stopped");
+		
+	}
+	
+
+}

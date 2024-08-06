@@ -1,0 +1,10 @@
+package com.aurionpro.structural.facade.model;
+
+public interface ISoundSystem {
+	
+	public boolean start();
+	public boolean stop();
+	public int volumeUP();
+	public int volumeDown();
+
+}

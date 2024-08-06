@@ -1,0 +1,55 @@
+package com.aurionpro.creational.builder.model;
+
+public class Phone {
+	
+	private String operatingSystem;
+	private int ram;
+	private String Processor;
+	private double ScreenSize;
+	private int battery;
+	public Phone(String operatingSystem, int ram, String processor, double screenSize, int battery) {
+		super();
+		this.operatingSystem = operatingSystem;
+		this.ram = ram;
+		Processor = processor;
+		ScreenSize = screenSize;
+		this.battery = battery;
+	}
+	@Override
+	public String toString() {
+		return "Phone [operatingSystem=" + operatingSystem + ", ram=" + ram + ", Processor=" + Processor
+				+ ", ScreenSize=" + ScreenSize + ", battery=" + battery + "]";
+	}
+	public String getOperatingSystem() {
+		return operatingSystem;
+	}
+	public void setOperatingSystem(String operatingSystem) {
+		this.operatingSystem = operatingSystem;
+	}
+	public int getRam() {
+		return ram;
+	}
+	public void setRam(int ram) {
+		this.ram = ram;
+	}
+	public String getProcessor() {
+		return Processor;
+	}
+	public void setProcessor(String processor) {
+		Processor = processor;
+	}
+	public double getScreenSize() {
+		return ScreenSize;
+	}
+	public void setScreenSize(double screenSize) {
+		ScreenSize = screenSize;
+	}
+	public int getBattery() {
+		return battery;
+	}
+	public void setBattery(int battery) {
+		this.battery = battery;
+	}
+	
+
+}

@@ -1,0 +1,57 @@
+package com.aurionpro.test;
+
+import java.util.LinkedList;
+import java.util.List;
+import com.aurionpro.model.Guitar;
+import com.aurionpro.model.GuitarSpecification;
+import com.aurionpro.model.Builder;
+import com.aurionpro.model.Type;
+import com.aurionpro.model.Wood;
+
+public class Inventory {
+    private List<Guitar> guitars;
+
+    public Inventory() {
+        guitars = new LinkedList<>();
+    }
+
+    public void addGuitar(String serialNumber, double price, Builder builder, String model, Type type, Wood backWood, Wood topWood) {
+        GuitarSpecification spec = new GuitarSpecification(builder, model, type, backWood, topWood);
+        Guitar guitar = new Guitar(serialNumber, price, spec);
+        guitars.add(guitar);
+    }
+
+    public Guitar getGuitar(String serialNumber) {
+        for (Guitar guitar : guitars) {
+            if (guitar.getSerialNumber().equals(serialNumber)) {
+                return guitar;
+            }
+        }
+        return null;
+    }
+
+    public List<Guitar> search(GuitarSpecification searchSpec) {
+        List<Guitar> matchingGuitars = new LinkedList<>();
+
+        for (Guitar guitar : guitars) {
+            GuitarSpecification spec = guitar.getGuitarSpecification();
+
+            
+            if(guitar.getGuitarSpecification().matches(searchSpec)) {
+            	matchingGuitars.add(guitar);
+            }
+            // Check each specification field
+            if ((searchSpec.getBuilder() != null && searchSpec.getBuilder() != Builder.ANY && !searchSpec.getBuilder().equals(spec.getBuilder()))
+                || (searchSpec.getModel() != null && !searchSpec.getModel().equals("") && !searchSpec.getModel().equals(spec.getModel()))
+                || (searchSpec.getType() != null && searchSpec.getType() != Type.ANY && !searchSpec.getType().equals(spec.getType()))
+                || (searchSpec.getBackWood() != null && searchSpec.getBackWood() != Wood.ANY && !searchSpec.getBackWood().equals(spec.getBackWood()))
+                || (searchSpec.getTopWood() != null && searchSpec.getTopWood() != Wood.ANY && !searchSpec.getTopWood().equals(spec.getTopWood()))) {
+                continue;
+            }
+
+            matchingGuitars.add(guitar);
+        }
+
+        return matchingGuitars;
+    }
+}

@@ -1,0 +1,30 @@
+package com.aurionpro.structural.facade.model;
+
+public class SoundSystem {
+	private int volume =0 ;
+	private boolean startStop;
+	
+
+	public boolean start() {
+		startStop = true;
+		return startStop;
+		
+	}
+	public boolean stop() {
+		startStop = false;
+		return startStop;
+		
+	}
+	
+	public int volumeUP() {
+		volume++;
+		return volume;
+		
+	}
+	public int volumeDown() {
+		volume--;
+		return volume;
+		
+	}
+
+}

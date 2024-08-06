@@ -1,0 +1,28 @@
+package com.aurionpro.model;
+
+import com.aurionpro.exceptions.CellAlreadyMarkedException;
+
+public class TicTacToe {
+    private Board board;
+    private MarkType currentPlayer;
+
+    public TicTacToe(int boardSize) {
+        board = new Board(boardSize);
+        currentPlayer = MarkType.X;
+    }
+
+    public void makeMove(int row, int col) {
+        try {
+            board.setCellMark(row, col, currentPlayer);
+            switchPlayer();
+            board.display();
+        } catch (CellAlreadyMarkedException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private void switchPlayer() {
+        currentPlayer = (currentPlayer == MarkType.X) ? MarkType.O : MarkType.X;
+    }
+}
+
